@@ -1,10 +1,13 @@
 .fontResizer{
+	display: inline-block;
 	position: relative;
 	left: 1%;
 	bottom: 1%;
 	visibility:visible;
 	z-index:9999;
 	float:right;
+	font-size: 0.8em;
+	margin-top: 1em;
 }
 .fontResizer img{
 	visibility:visible;
@@ -34,7 +37,19 @@
 	-moz-transform: scale(1.20); /* Firefox */
 }
 @media only screen and (max-width: 640px) {
-	.fontResizer{
+	.fontResizer {
 	display: none;	
 	}
 }
+
+/*Nudge the site-branding and search-widget elements to make room for the fontResizer*/
+
+.row.site-branding {
+	padding: 0 1em 0 2em !important;
+}
+
+.site-branding div.row.search-widget {
+	display: inline-block !important;
+	width: 93% !important;
+}
+
