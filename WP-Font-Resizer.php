@@ -8,6 +8,9 @@ Author: Ahmedur Rahman Shovon
 Author URI: http://www.shovon.info
 License: GPL2
 */
+
+/* Font Awesome licensed under SIL OFL 1.1 ihttp://scripts.sil.org/OFL */
+
 class WPFontResizer {
 
 	/*--------------------------------------------*
@@ -34,17 +37,17 @@ class WPFontResizer {
     	$this->register_scripts_and_styles();
 
 		// Plugin Actions	    
-	    add_action( 'wp_footer', array( $this, 'display_link' ) );
+	    //add_action( 'wp_footer', array( $this, 'display_link' ) );
 	    
 	} // end constructor
 
 
 	/*--------------------------------------------*
 	 * Core Functions
-	 *---------------------------------------------*/
+	 *---------------------------------------------
 
 	function display_link() {
-		$htmlcode='<div class="fontResizer"><img class="plusfont" src="'.plugins_url( 'images/plus.png' , __FILE__ ).'" title="Increase font size"/><img class="minusfont" src="'.plugins_url( 'images/minus.png' , __FILE__ ).'" title="Decrease font size"/><img class="reloadfont" src="'.plugins_url( 'images/reload.png' , __FILE__ ).'" title="Default font size"/></div>';
+		$htmlcode='jQuery(".search").append("<div class="fontResizer"><i class="fa fa-plus fa-2x" title="Increase font size"></i><i class="fa fa-font fa-2x" title="Default font size"></i><i class="fa fa-minus fa-2x" title="Decrease font size"></i></div>");';
 		echo $htmlcode;
 	} 
 	  
@@ -70,8 +73,11 @@ class WPFontResizer {
 		if ( is_admin() ) {
 			// no admin styes or scripts
 		} else { 
+			$this->load_file( self::slug . '-loader', '/js/fontResizerLoad.js', true);
 			$this->load_file( self::slug . '-script', '/js/fontResizer.js', true );
+			$this->load_file( self::slug . '-fontawesome', '/font-awesome/css/font-awesome.min.css' );
 			$this->load_file( self::slug . '-style', '/css/fontResizer.css' );
+
 		} // end if/else
 	} // end register_scripts_and_styles
 
@@ -88,6 +94,7 @@ class WPFontResizer {
 			} else {
 				wp_register_style( $name, $url );
 				wp_enqueue_style( $name );
+				error_log("Style loaded: " . $name . $url);
 			} // end if
 		} // end if
     

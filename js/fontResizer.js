@@ -22,13 +22,13 @@ jQuery(function($) {
 		}	
 	}
 
-	$('.plusfont').on('click',function(){
+	$('.fa-plus').on('click',function(){
 		changeSize($('body'),'bigger');
 	})
-	$('.minusfont').on('click',function(){
+	$('.fa-minus').on('click',function(){
 		changeSize($('body'),'smaller');
 	})
-	$('.reloadfont').on('click',function(){
+	$('.fa-font').on('click',function(){
 		$('html body').css('font-size','');
 	})
 });
