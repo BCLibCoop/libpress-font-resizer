@@ -1,58 +1,59 @@
 div.fontResizer {
-	display: inline-block;
-	visibility:visible;
-	z-index:9999;
-	float:right;
-	font-size: 0.8em;
-	margin-top: 1.5em;
-}
-.fontResizer i.fa {
-	visibility:visible;
-	height: 25px;
-	width: 25px;
-	margin-top:2px;
-	opacity: .8;
-	transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	display: block;
-	border: none;
-	z-index:9999;
-}
-.fontResizer i.fa:hover{
-	cursor:pointer;
-	opacity: 1.0;
-	transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	transform: scale(1.20);
-	-ms-transform: scale(1.20); /* IE 9 */
-	-webkit-transform: scale(1.20); /* Safari and Chrome */
-	-o-transform: scale(1.20); /* Opera */
-	-moz-transform: scale(1.20); /* Firefox */
+  display: inline-block;
+  visibility: visible;
+  z-index: 9999;
+  float: right;
+  font-size: 0.8em;
+  margin-top: 1.5em;
 }
 
-/*Nudge plus and minus because font icon leans right */
-.fontResizer i.fa.fa-plus, .fontResizer i.fa.fa-minus {
-	padding-left: 1px;
+.fontResizer i.fa {
+  visibility: visible;
+  height: 25px;
+  width: 25px;
+  margin-top: 2px;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  display: block;
+  border: none;
+  z-index: 9999;
+}
+
+.fontResizer i.fa:hover {
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transform: scale(1.2);
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
+  -o-transform: scale(1.2); /* Opera */
+  -moz-transform: scale(1.2); /* Firefox */
+}
+
+/* Nudge plus and minus because font icon leans right */
+.fontResizer i.fa.fa-plus,
+.fontResizer i.fa.fa-minus {
+  padding-left: 1px;
 }
 
 @media only screen and (max-width: 640px) {
-	.fontResizer {
-	display: none;	
-	}
+  .fontResizer {
+    display: none;
+  }
 }
 
-/*Nudge the site-branding and search-widget elements to make room for the fontResizer if we need to*/
-
+/* Nudge the site-branding and search-widget elements to make room for the fontResizer if we need to */
 .row.site-branding {
-	padding: 0 1em 0 2em !important;
+  padding: 0 1em 0 2em !important;
 }
 
 .site-branding div.row.search-widget {
-	display: inline-block !important;
-	width: 93% !important;
+  display: inline-block !important;
+  width: 93% !important;
 }
-
