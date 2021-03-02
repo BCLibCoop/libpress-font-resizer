@@ -69,7 +69,7 @@ class WPFontResizer {
 	} // end init_plugin_constants
 
 	// Registers and enqueues stylesheets
-	private function register_scripts_and_styles() {
+	public function register_scripts_and_styles() {
 		if ( is_admin() ) {
 			// no admin styes or scripts
 		} else {
