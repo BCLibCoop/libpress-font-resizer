@@ -93,7 +93,6 @@ class WPFontResizer {
 			} else {
 				wp_register_style( $name, $url );
 				wp_enqueue_style( $name );
-				error_log("Style loaded: " . $name . $url);
 			} // end if
 		} // end if
 
