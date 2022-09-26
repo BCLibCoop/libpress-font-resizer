@@ -59,17 +59,17 @@ div.fontResizer {
 }
 
 @media screen and (min-width: 640px) {
-  body.federations .row.search-widget.flat {
+  body.flat-search .row.search-widget.flat {
     padding-right: 5em;
   }
 
-  body.federations .fontResizer {
+  body.flat-search .fontResizer {
     position: absolute;
     right: 0;
   }
 }
 
-body.federations .fontResizer {
+body.flat-search .fontResizer {
   display: inline-flex;
   margin-top: 0.5em;
 }

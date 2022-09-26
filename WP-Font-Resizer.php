@@ -4,7 +4,7 @@
 Plugin Name: WP-Font-Resizer (Libpress Fork)
 Plugin URI: http://shovon.info/wp/wp-font-resizer/
 Description: A plugin that helps users to increase or decrease font size and also reset default font size.
-Version: 1.2
+Version: 1.2.1
 Author: Ahmedur Rahman Shovon
 Author URI: http://www.shovon.info
 License: GPL2
@@ -78,10 +78,10 @@ class WPFontResizer
             $url = plugins_url($file_path, __FILE__);
 
             if ($is_script) {
-                wp_register_script($name, $url, ['jquery']);
+                wp_register_script($name, $url, ['jquery'], filemtime($file));
                 wp_enqueue_script($name);
             } else {
-                wp_register_style($name, $url);
+                wp_register_style($name, $url, [], filemtime($file));
                 wp_enqueue_style($name);
             }
         }
