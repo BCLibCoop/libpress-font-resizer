@@ -1,10 +1,24 @@
-div.fontResizer {
+header .search {
+  position: relative;
+  margin-left: calc(var(--bs-gutter-x) * 2);
+}
+
+.fontResizer {
   display: inline-block;
   visibility: visible;
   z-index: 9999;
-  float: right;
   font-size: 0.8em;
   margin-top: 1.5em;
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  position: absolute;
+  top: 0;
+  left: calc(var(--bs-gutter-x) * -2);
+}
+
+/* Backwards compatible with old theme header */
+.layout .fontResizer {
+  --bs-gutter-x: 0.5rem;
+  top: 1.5em;
 }
 
 .fontResizer i.fa {
@@ -42,34 +56,20 @@ div.fontResizer {
   padding-left: 1px;
 }
 
-@media only screen and (max-width: 640px) {
-  .fontResizer {
-    display: none;
-  }
-}
-
-/* Nudge the site-branding and search-widget elements to make room for the fontResizer if we need to */
-.row.site-branding {
-  padding: 0 1em 0 2em !important;
-}
-
-.site-branding div.row.search-widget {
-  display: inline-block !important;
-  width: 93% !important;
-}
-
 @media screen and (min-width: 640px) {
   body.flat-search .row.search-widget.flat {
     padding-right: 5em;
   }
+}
 
-  body.flat-search .fontResizer {
-    position: absolute;
-    right: 0;
-  }
+body.flat-search header .search {
+  margin-left: 0;
 }
 
 body.flat-search .fontResizer {
   display: inline-flex;
   margin-top: 0.5em;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  right: 0;
+  left: unset;
 }
